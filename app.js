@@ -13,12 +13,13 @@ app.use(bodyParser.json());
 app.use('/api', indexRouter);
 
 
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true }).then(()=> {
-    console.log("mongoose connected");
-}).catch((error) => {console.log("DB connection fail", error);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true }).then(() => {
+	console.log("mongoose connected");
+}).catch((error) => {
+	console.log("DB connection fail", error);
 })
 
 app.listen(5000, () => {
-    console.log("sever on 5000");
+	console.log("sever on 5000");
 })
 
