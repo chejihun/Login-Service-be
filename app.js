@@ -8,13 +8,14 @@ const cors = require('cors')
 
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use('/api', indexRouter);
-app.use(cors());
+
 
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true }).then(()=> {
     console.log("mongoose connected");
-}).catch((err) => {console.log("DB connection fail", err);
+}).catch((error) => {console.log("DB connection fail", error);
 })
 
 app.listen(5000, () => {
